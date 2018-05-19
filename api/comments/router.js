@@ -27,8 +27,9 @@ router.post('/comment', (req, res, next) => {
 
 
 router.get('/comment/:id', (req, res, next) => {
-    let id = +req.params.id;
-    Comment.find({ id: id })
+    let id = req.params._id;
+    console.log(+req.params._id,'ssdad');
+    Comment.findOne({ id: id })
         .then(function (comment) {
         res.json({comment})
     }).catch(next)
