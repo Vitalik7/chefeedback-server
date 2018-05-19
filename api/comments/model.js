@@ -9,7 +9,7 @@ const userSchema = new mongoose.Schema({
     typeComment: {type: Boolean},
     // likes: {type: Number, default: 0},
     date: {type: Date, default: Date.now},
-    image: [{type: String}],
+    images: [{type: String}],
     lat: { type: Number},
     lng: { type: Number}
 });
