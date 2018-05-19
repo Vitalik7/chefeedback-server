@@ -47,5 +47,14 @@ router.post('/comment/:id', function (req, res) {
     });
 });
 
+router.get('/category', (req, res, next) => {
+    Comment
+        .find({category: {$exists: true}})
+        .then(comment => {
+            res.json({comment})
+        })
+        .catch(next)
+});
+
 
 module.exports = router;
