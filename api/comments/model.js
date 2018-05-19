@@ -6,7 +6,7 @@ const userSchema = new mongoose.Schema({
     theme: {type: String},
     text: { type: String},
     category: { type: String },
-    typeComment: {type: Boolean}
+    typeComment: {type: Boolean},
     // likes: {type: Number, default: 0},
     date: {type: Date, default: Date.now},
     image: [{type: String}],
