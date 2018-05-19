@@ -24,13 +24,17 @@ router.post('/comment', (req, res, next) => {
         .catch(next)
 });
 
+
+
 router.get('/comment/:id', (req, res, next) => {
-    Comment.find(req.params._id)
-        .then(comment => {
-            res.json({comment})
-        })
-        .catch(next)
+    let id = +req.params.id;
+    Comment.find({ id: id })
+        .then(function (comment) {
+        res.json({comment})
+    }).catch(next)
 });
+
+
 
 router.post('/comment/:id', function (req, res) {
     Comment.findById(req.params.id, function (err, theUser) {
