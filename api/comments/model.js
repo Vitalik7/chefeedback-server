@@ -11,7 +11,14 @@ const userSchema = new mongoose.Schema({
     date: {type: Date, default: Date.now},
     images: [{type: String}],
     // lat: { type: Number},
-    // lng: { type: Number}
+    // lng: { type: Number},
+    
+    month: { type: Number},
+    priceObject: { type: String},
+    payPriceObject: { type: String },
+    seleryclient: { type: String},
+    tax: { type: String },
+    payMounth: { type: String}
 });
 
 module.exports = mongoose.model('Comment', userSchema)
